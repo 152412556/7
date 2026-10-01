@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выпускники — Военная кафедра</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-emblem">★</div>
+        <div class="logo-text">
+          <div class="uni">НАО «Торайгыров университет»</div>
+          <div class="dept">Военная кафедра</div>
+        </div>
+      </a>
+      <nav class="nav-main">
+        <a href="../index.html">Главная</a>
+        <a href="o-kafedre.html">О кафедре</a>
+        <a href="postuplenie.html">Поступление</a>
+        <a href="podgotovka.html">Подготовка</a>
+        <a href="studentu.html">Студенту</a>
+        <a href="novosti.html">Новости</a>
+        <a href="dokumenty.html">Документы</a>
+        <a href="kontakty.html">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn-login">Войти</a>
+        <button class="burger" id="burger" aria-label="Меню" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="../index.html">Главная</a>
+      <a href="o-kafedre.html">О кафедре</a>
+      <a href="vypuskniki.html" class="active">Выпускники</a>
+      <a href="login.html" class="btn-login">Войти</a>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Выпускники кафедры</h1>
+      <div class="breadcrumb"><a href="../index.html">Главная</a> / Выпускники</div>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="container">
+      <div class="content-card">
+        <h2>Около 20 000 выпускников</h2>
+        <p>С 1962 года военная кафедра Торайгыров университета подготовила около <strong>20 000 офицеров и сержантов запаса</strong> для Вооружённых Сил и силовых структур Республики Казахстан.</p>
+        <p>Выпускники кафедры служат в армии, работают в органах территориальной обороны, МЧС, правоохранительных структурах и успешно реализуют себя в гражданской жизни, сохраняя верность девизу: <strong>Честь. Долг. Отвага.</strong></p>
+      </div>
+
+      <div class="content-card">
+        <h2>Известные выпускники</h2>
+        <div class="leadership-grid" id="graduatesGrid" style="margin-top:20px"></div>
+        <p class="text-muted" style="font-size:14px;margin-top:20px">
+          Раздел дополняется преподавателями в личном кабинете. Если вы выпускник — напишите на
+          <a href="mailto:vk_pgu@mail.ru" style="color:var(--primary);font-weight:600">vk_pgu@mail.ru</a>.
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h2>Преподаватели</h2>
+        <div class="leadership-grid" id="teachersGrid" style="margin-top:20px"></div>
+      </div>
+
+      <div class="content-card">
+        <h2>Наследие кафедры</h2>
+        <ul>
+          <li>Подготовка офицеров запаса с 1962 года</li>
+          <li>8 военно-учётных специальностей (офицерские и сержантские программы)</li>
+          <li>Участие выпускников в военно-патриотическом воспитании молодёжи</li>
+        </ul>
+        <p style="margin-top:16px">
+          <a href="podgotovka.html" class="btn btn-dark btn-sm">8 специальностей →</a>
+          <a href="o-kafedre.html" class="btn btn-outline-dark btn-sm" style="margin-left:8px">О кафедре</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding-top:0">
+        <div>© 2026 НАО «Торайгыров университет». Военная кафедра.</div>
+        <div class="footer-slogan">ЧЕСТЬ · ДОЛГ · ОТВАГА</div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/auth.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    function initials(name) {
+      var p = (name || '').split(/\s+/);
+      if (p.length >= 2) return (p[0].charAt(0) + p[1].charAt(0)).toUpperCase();
+      return (name || '??').slice(0, 2).toUpperCase();
+    }
+    function card(p) {
+      return '<div class="card person-card">' +
+        '<div class="person-photo">' + initials(p.name) + '</div>' +
+        '<h3>' + (p.name || '') + '</h3>' +
+        (p.rank ? '<div class="rank">' + p.rank + '</div>' : '') +
+        '<div class="role">' +
+          [p.specialty, p.year ? 'год: ' + p.year : '', p.group ? 'группа ' + p.group : '', p.note]
+            .filter(Boolean).join(' · ') +
+        '</div></div>';
+    }
+    var people = getPeople();
+    var grads = people.filter(function (p) { return p.type === 'graduate'; });
+    var teachers = people.filter(function (p) { return p.type === 'teacher'; });
+    document.getElementById('graduatesGrid').innerHTML = grads.length
+      ? grads.map(card).join('')
+      : '<p class="text-muted">Пока нет записей о выпускниках.</p>';
+    document.getElementById('teachersGrid').innerHTML = teachers.length
+      ? teachers.map(card).join('')
+      : '<p class="text-muted">Добавьте преподавателей в кабинете преподавателя.</p>';
+  </script>
+</body>
+</html>

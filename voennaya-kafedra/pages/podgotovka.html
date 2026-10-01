@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Специальности — Военная кафедра</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 24px;
+      font-size: 14px;
+    }
+    .spec-table th,
+    .spec-table td {
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .spec-table th {
+      background: var(--primary-dark);
+      color: #fff;
+      font-weight: 600;
+    }
+    .spec-table tr:nth-child(even) td {
+      background: #f7f9fc;
+    }
+    .spec-table .group-row td {
+      background: rgba(19, 58, 102, 0.1);
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-align: center;
+    }
+    .spec-table .kk {
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+    .spec-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+    @media (max-width: 700px) {
+      .spec-table, .spec-table thead, .spec-table tbody, .spec-table th, .spec-table td, .spec-table tr {
+        display: block;
+      }
+      .spec-table thead { display: none; }
+      .spec-table tr { margin-bottom: 12px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+      .spec-table td { border: none; border-bottom: 1px solid var(--border); }
+      .spec-table td:last-child { border-bottom: none; }
+      .spec-table .group-row td { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-emblem">★</div>
+        <div class="logo-text">
+          <div class="uni">НАО «Торайгыров университет»</div>
+          <div class="dept">Военная кафедра</div>
+        </div>
+      </a>
+      <nav class="nav-main">
+        <a href="../index.html">Главная</a>
+        <a href="o-kafedre.html">О кафедре</a>
+        <a href="postuplenie.html">Поступление</a>
+        <a href="podgotovka.html" class="active">Подготовка</a>
+        <a href="studentu.html">Студенту</a>
+        <a href="novosti.html">Новости</a>
+        <a href="dokumenty.html">Документы</a>
+        <a href="kontakty.html">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn-login">Войти</a>
+        <button class="burger" id="burger" aria-label="Меню" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="../index.html">Главная</a>
+      <a href="podgotovka.html" class="active">Подготовка</a>
+      <a href="login.html" class="btn-login">Войти</a>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 data-i18n="page.specs">Специальности</h1>
+      <div class="breadcrumb"><a href="../index.html">Главная</a> / Специальности</div>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="container">
+      <div class="content-card">
+        <h2>«Торайғыров университеті» КеАҚ әскери кафедрадағы мамандықтар</h2>
+        <p>Специальности военной кафедры НАО «Торайгыров университет»</p>
+      </div>
+
+      <!-- 2 курс — офицеры -->
+      <div class="content-card">
+        <h2 data-i18n="page.course2">2 курс</h2>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th style="width:48px">№</th>
+              <th data-i18n="page.col.ru">На русском</th>
+              <th data-i18n="page.col.kk">Қазақша</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group-row"><td colspan="3">Запастағы офицерлер бағдарламалары · по программе офицеров запаса</td></tr>
+            <tr>
+              <td>1</td>
+              <td><strong>Боевое применение общевойсковых подразделений, частей и соединений</strong></td>
+              <td class="kk">Жалпыәскери бөлімшелерді, бөлімдер мен құрамаларды жауынгерлік қолдану</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>Планирование и организация территориальной обороны</strong></td>
+              <td class="kk">Аумақтық қорғанысты жоспарлау және ұйымдастыру</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Организационно-мобилизационная работа*</strong></td>
+              <td class="kk">Ұйымдастыру-жұмылдыру жұмыстары*</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>Финансовое обеспечение*</strong></td>
+              <td class="kk">Қаржылық қамтамасыз ету*</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><strong>Организация связи в Сухопутных войсках</strong></td>
+              <td class="kk">Құрлық әскерлерінде байланысты ұйымдастыру</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="spec-note">* — специальности, отмеченные в учебном плане кафедры</p>
+      </div>
+
+      <!-- 1 курс — офицеры -->
+      <div class="content-card">
+        <h2 data-i18n="page.course1.off">1 курс — программа офицеров запаса</h2>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th style="width:48px">№</th>
+              <th data-i18n="page.col.ru">На русском</th>
+              <th data-i18n="page.col.kk">Қазақша</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group-row"><td colspan="3">Запастағы офицерлер бағдарламалары · по программе офицеров запаса</td></tr>
+            <tr>
+              <td>1</td>
+              <td><strong>Боевое применение общевойсковых подразделений, частей и соединений</strong></td>
+              <td class="kk">Жалпыәскери бөлімшелерді, бөлімдер мен құрамаларды жауынгерлік қолдану</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>Организация связи в Сухопутных войсках</strong></td>
+              <td class="kk">Құрлық әскерлерінде байланысты ұйымдастыру</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Организационно-мобилизационная работа*</strong></td>
+              <td class="kk">Ұйымдастыру-жұмылдыру жұмыстары*</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>Финансовое обеспечение*</strong></td>
+              <td class="kk">Қаржылық қамтамасыз ету*</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 1 курс — сержанты -->
+      <div class="content-card">
+        <h2 data-i18n="page.course1.sgt">1 курс — программа сержантов запаса</h2>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th style="width:48px">№</th>
+              <th data-i18n="page.col.ru">На русском</th>
+              <th data-i18n="page.col.kk">Қазақша</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group-row"><td colspan="3">Запастағы сержанттар бағдарламалары · по программе сержантов запаса</td></tr>
+            <tr>
+              <td>1</td>
+              <td><strong>Стрелковые (Командир отделения)</strong></td>
+              <td class="kk">Атқыштық (бөлімше командирі)</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>Командир отделения – командир боевой машины (Боевых машин пехоты)</strong></td>
+              <td class="kk">Бөлімше командирі – жауынгерлік машинасының командирі (жаяу әскерлердің жауынгерлік машинасы)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Коротковолновых радиостанций малой мощности</strong></td>
+              <td class="kk">Орташа қуатты қысқа толқынды радиостанциялар</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <a href="../index.html" class="btn btn-outline-dark btn-sm" data-i18n="page.back">← На главную</a>
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding-top:0">
+        <div>© 2026 НАО «Торайгыров университет». Военная кафедра.</div>
+        <div class="footer-slogan">ЧЕСТЬ · ДОЛГ · ОТВАГА</div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
